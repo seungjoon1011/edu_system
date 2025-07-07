@@ -47,4 +47,10 @@ public class TeacherController {
 
         return "redirect:/teachers";
     }
+    @PostMapping("/delete/{id}")
+    public String delete(@PathVariable int id){
+        teacherRepository.deleteById(id);
+
+        return "redirect:/teachers";
+    }
 }
